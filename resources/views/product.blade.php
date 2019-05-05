@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="product-pic-zoom">
-                            <img class="product-big-img" src="{{asset('img/single-product/1.jpg')}}" alt="">
+                            <img class="product-big-img" src="{{asset('img/product/product-large.png')}}" alt="">
                         </div>
                         <div class="product-thumbs" tabindex="1" style="overflow: hidden; outline: none;">
                             <div class="product-thumbs-track">

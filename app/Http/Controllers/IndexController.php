@@ -53,7 +53,9 @@ class IndexController extends Controller
     {
         $categories = Category::all();
         $userId = Auth::user()->id;
+        $items = Cart::session($userId)->getContent();
         $quantity = Cart::session($userId)->getTotalQuantity();
-        return view('checkout', compact('categories', 'quantity'));
+        $total = Cart::session($userId)->getTotal();
+        return view('checkout', compact('categories', 'quantity', 'items', 'total'));
     }
 }
