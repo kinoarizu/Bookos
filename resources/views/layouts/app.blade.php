@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-	<title>Hujjah Store | Eccomerce</title>
+	<title>Hujjah Store | @yield('title')</title>
 	<meta charset="UTF-8">
 	<meta name="description" content=" Divisima | Best eCommerce">
 	<meta name="keywords" content="divisima, eCommerce, creative, html">

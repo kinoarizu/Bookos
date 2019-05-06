@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app') @section('title', 'Eccomerce')
     @section('content')
         <!-- Hero section -->
         <section class="hero-section">

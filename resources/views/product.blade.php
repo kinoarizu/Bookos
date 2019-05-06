@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app') @section('title', 'Product')
     @section('content')   
         <!-- Page info -->
         <div class="page-top-info">

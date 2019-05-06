@@ -1,4 +1,4 @@
-@extends('layouts.app') 
+@extends('layouts.app') @section('title', 'Checkout')
     @section('content')
         <!-- Page info -->
         <div class="page-top-info">
@@ -55,7 +55,7 @@
                                 @endforeach
                             </ul>
                             <ul class="price-list">
-                                <li>Total<span>Rp. {{$total}}</span></li>
+                                <li>Total<span class="w-25">Rp. {{$total}}</span></li>
                                 <li>Shipping<span>free</span></li>
                                 <li class="total">Total<span>Rp. {{$total}}</span></li>
                             </ul>
