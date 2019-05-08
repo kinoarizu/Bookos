@@ -18,6 +18,7 @@ Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['web', 'verified']], function () {
     Route::get('/', 'IndexController@index');
+    Route::get('/result', 'IndexController@search');
     Route::get('/category/{name}', 'IndexController@category');
     Route::get('/product/{id}', 'IndexController@product');
     Route::get('/cart', 'CartController@show');

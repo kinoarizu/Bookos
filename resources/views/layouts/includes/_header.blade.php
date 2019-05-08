@@ -8,9 +8,9 @@
                     </a>
                 </div>
                 <div class="col-xl-6 col-lg-5">
-                    <form class="header-search-form">
-                        <input type="text" placeholder="Search on divisima ....">
-                        <button><i class="flaticon-search"></i></button>
+                    <form action="/result" method="get" class="header-search-form">
+                        <input name="cari" type="text" placeholder="Search on divisima ....">
+                        <button type="submit"><i class="flaticon-search"></i></button>
                     </form>
                 </div>
                 <div class="col-xl-4 col-lg-5">

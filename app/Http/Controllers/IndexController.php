@@ -58,4 +58,13 @@ class IndexController extends Controller
         $total = Cart::session($userId)->getTotal();
         return view('checkout', compact('categories', 'quantity', 'items', 'total'));
     }
+
+    public function search(Request $request)
+    {
+        $userId = Auth::user()->id;
+        $categories = Category::all();
+        $quantity = Cart::session($userId)->getTotalQuantity();
+        $products = Product::where('name_product', 'LIKE', '%' . $request->cari . '%')->get();
+        return view('search', compact('categories', 'products', 'quantity'));
+    }
 }

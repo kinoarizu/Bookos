@@ -55,9 +55,9 @@
                                 @endforeach
                             </ul>
                             <ul class="price-list">
-                                <li>Total<span class="w-25">Rp. {{$total}}</span></li>
-                                <li>Shipping<span>free</span></li>
-                                <li class="total">Total<span>Rp. {{$total}}</span></li>
+                                <li>Total<span class="w-50 text-right">Rp. {{$total}}</span></li>
+                                <li>Shipping<span>Free</span></li>
+                                <li class="total">Total<span class="w-50 text-right">Rp. {{$total}}</span></li>
                             </ul>
                         </div>
                     </div>
