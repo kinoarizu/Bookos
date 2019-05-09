@@ -25,6 +25,7 @@ Route::group(['middleware' => ['web', 'verified']], function () {
     Route::get('/cart/add/{id}', 'CartController@add');
     Route::get('/cart/remove/{id}', 'CartController@remove');
     Route::get('/checkout', 'IndexController@checkout');
+    Route::get('/profile', 'IndexController@profile');
     Route::get('/contact', function () {
         return view('contact');
     });

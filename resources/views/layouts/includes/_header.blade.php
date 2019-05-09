@@ -23,7 +23,7 @@
                         @else
                             <div class="up-item">
                                 <i class="flaticon-profile"></i>
-                                <a href="/login">{{Auth::user()->full_name}}</a>
+                                <a href="/profile">{{Auth::user()->full_name}}</a>
                             </div>
                         @endif
                         <div class="up-item">

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app') @section('title', 'Result')
     @section('content')
         <section class="product-filter-section">
             <div class="container">

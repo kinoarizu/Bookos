@@ -23,6 +23,14 @@ class IndexController extends Controller
         return view('home', compact('categories', 'sliders', 'latest', 'banner', 'quantity'));
     }
 
+    public function profile(Request $request)
+    {
+        $userId = Auth::user()->id;
+        $categories = Category::all();
+        $quantity = Cart::session($userId)->getTotalQuantity();
+        return view('profile', compact('categories', 'quantity'));
+    }
+
     public function category($name)
     {
         $userId = Auth::user()->id;
