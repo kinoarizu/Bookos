@@ -2,6 +2,9 @@
     @section('content')
         <section>
             <div class="container">
+                <div class="row">
+                    <h3 class="text-center mt-5 ml-5">Your Profile</h3>
+                </div>
                 <div class="row mt-5 ml-4 mb-5">
                     <div class="col-md-4">
                         <img src="{{asset('img/account.png')}}" alt="user's photo" width="250">
@@ -33,12 +36,28 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <table>
+                <div class="row mb-5">
+                    <table class="table table-dark rounded mt-4">
                         <thead>
                             <th>Transaction ID</th>
-                            <th></th>
+                            <th>Products</th>
+                            <th>Full Address</th>
+                            <th>Shipment</th>
+                            <th>Payment</th>
+                            <th>Ship Cost</th>
+                            <th>Total Cost</th>
+                            <th>Payment Proof</th>
+                            <th>Status</th>
                         </thead>
+                        <tbody>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tbody>
                     </table>
                 </div>
             </div>

@@ -19,27 +19,71 @@
                 <div class="row">
                     <div class="col-lg-7 order-2 order-lg-1">
                         <form class="checkout-form">
-                            <div class="cf-title">Billing Address</div>
-                            <div class="row address-inputs">
+                            <div class="cf-title mb-4">Billing Address</div>
+                            <div class="row address-inputs mb-3">
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Address">
-                                    <input type="text" placeholder="Address line 2">
-                                    <input type="text" placeholder="Country">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" placeholder="Zip code">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" placeholder="Phone no.">
+                                    <textarea name="address" id="address" placeholder="Full Address" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
-                            <div class="cf-title">Payment</div>
+                            <div class="cf-title mb-4">Shipment</div>
                             <ul class="payment-list">
-                                <li>Paypal<a href="#"><img src="{{asset('img/paypal.png')}}" alt=""></a></li>
-                                <li>Credit / Debit card<a href="#"><img src="{{asset('img/mastercart.png')}}" alt=""></a></li>
-                                <li>Pay when you get the package</li>
+                                <li>
+                                    <input type="radio" name="shipment" value="JNE" class="ml-4 mr-3">
+                                    JNE
+                                    <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
+                                </li>
+                                <li>
+                                    <input type="radio" name="shipment" value="POS" class="ml-4 mr-3">
+                                    POS
+                                    <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
+                                </li>
+                                <li>
+                                    <input type="radio" name="shipment" value="TIKI" class="ml-4 mr-3">
+                                    TIKI
+                                    <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
+                                </li>
                             </ul>
-                            <button class="site-btn submit-order-btn">Place Order</button>
+                            <div class="cf-title mb-4">Payment</div>
+                            <ul class="payment-list">
+                                <li>
+                                    <input type="radio" name="payment" value="Kartu Kredit" class="ml-4 mr-3">
+                                    Kartu Kredit
+                                    <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
+                                </li>
+                                <li>
+                                    <input type="radio" name="payment" value="ATM/Bank Transfer" class="ml-4 mr-3">
+                                    ATM/Bank Transfer
+                                    <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
+                                </li>
+                                <li>
+                                    <input type="radio" name="payment" value="TCash" class="ml-4 mr-3">
+                                    TCash
+                                    <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
+                                </li>
+                                <li>
+                                    <input type="radio" name="payment" value="Indomaret / Alfamaret" class="ml-4 mr-3">
+                                    Indomaret / Alfamaret
+                                    <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
+                                </li>
+                            </ul>
+                            <div class="cf-title mb-4">Check Ship Cost</div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <select name="provinsi" id="provinsi">
+                                        <option value="">Pilih Provinsi</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <select name="kota" id="kota">
+                                        <option value="">Pilih Kota</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 pl-5">
+                                    <small>Ship Cost</small>
+                                    <h4>Rp. 20000</h4>
+                                </div>
+                            </div>
+                            <button class="site-btn submit-order-btn mt-5">Place Order</button>
                         </form>
                     </div>
                     <div class="col-lg-5 order-1 order-lg-2">
