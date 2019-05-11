@@ -2,7 +2,7 @@
     @section('content')
         <!--========= Section Form ==========-->
         <section>
-            <div class="container pt-4">
+            <div class="container pt-3">
                 <div class="row mt-5">
                     <div class="col-md-12 text-center">
                         <a href="/" class="site-logo">
@@ -24,7 +24,7 @@
                         @endif
                         <form action="{{ route('login') }}" method="POST" class="checkout-form">    
                             <div class="cf-reg text-center">Login User Divisima</div>
-                            <div class="row address-inputs">
+                            <div class="row address-inputs mb-4">
                                 <div class="col-md-12">
                                     {{csrf_field()}}
                                     @if($errors->has('email'))
@@ -41,6 +41,18 @@
                                 <a href="{{ route('password.request') }}" class="text-center mx-auto d-block mt-2">Forgot Password</a>
                             </div>
                         </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 mx-auto d-block">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="" class="btn btn-primary btn-block"><i class="fa fa-facebook pr-1"></i> Facebook</a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="" class="btn btn-danger btn-block"><i class="fa fa-google pr-1"></i> Google</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
