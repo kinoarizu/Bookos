@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Product;
 use App\Brand;
+use App\Order;
+use App\OrderedProduct;
+use App\Transaction;
 use Cart;
 use Auth;
 
@@ -76,5 +79,45 @@ class IndexController extends Controller
         $products = Product::where('name_product', 'LIKE', '%' . $request->cari . '%')->get();
 
         return view('search', compact('categories', 'products', 'quantity'));
+    }
+
+    public function order(Request $request)
+    {
+        $userId = Auth::user()->id;
+
+        $this->validate($request, [
+            'address' => 'required|max:255',
+            'shipment' => 'required',
+            'payment' => 'required',
+        ]);
+
+        $transaction = new Transaction;
+        $transaction->user_id = Auth::user()->id;
+        $transaction->quantity = Cart::session($userId)->getTotalQuantity();
+        $transaction->total_price = Cart::session($userId)->getTotal();
+        $transaction->save();
+
+        $order = new Order;
+        $order->user_id = Auth::user()->id;
+        $order->full_address = $request->address;
+        $order->shipment = $request->shipment;
+        $order->payment = $request->payment;
+        $order->total_cost = Cart::session($userId)->getTotal();
+        $order->status = 'Menunggu Bukti';
+        $order->save();
+
+        $items = Cart::session($userId)->getContent();
+        $request->request->add(['order_id' => $order->id]);
+
+        foreach ($items as $item) {
+            $order->orderedproduct()->saveMany([
+                new OrderedProduct([
+                    'order_id' => $request->order_id,
+                    'product_id' => $item->id
+                ])
+            ]);
+        }
+
+        return redirect('/profile');
     }
 }

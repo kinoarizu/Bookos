@@ -47,7 +47,7 @@
                     <div class="col-md-5 mx-auto d-block">
                         <div class="row">
                             <div class="col-md-6">
-                                <a href="" class="btn btn-primary btn-block"><i class="fa fa-facebook pr-1"></i> Facebook</a>
+                                <a href="{{ url('/auth/facebook') }}" class="btn btn-primary btn-block"><i class="fa fa-facebook pr-1"></i> Facebook</a>
                             </div>
                             <div class="col-md-6">
                                 <a href="" class="btn btn-danger btn-block"><i class="fa fa-google pr-1"></i> Google</a>

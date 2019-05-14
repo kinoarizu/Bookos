@@ -15,6 +15,8 @@ Route::get('/admin/login', 'Admin\AdminController@login');
 Route::post('/admin/auth', 'Admin\AdminController@auth');
 Route::get('/admin/logout', 'Admin\AdminController@logout');
 Auth::routes(['verify' => true]);
+Route::get('auth/{provider}', 'Auth\SocialiteController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\SocialiteController@handleProviderCallback');
 
 Route::group(['middleware' => ['web', 'verified']], function () {
     Route::get('/', 'IndexController@index');
@@ -25,6 +27,7 @@ Route::group(['middleware' => ['web', 'verified']], function () {
     Route::get('/cart/add/{id}', 'CartController@add');
     Route::get('/cart/remove/{id}', 'CartController@remove');
     Route::get('/checkout', 'IndexController@checkout');
+    Route::post('/order/process', 'IndexController@order');
     Route::get('/profile', 'IndexController@profile');
     Route::get('/contact', function () {
         return view('contact');

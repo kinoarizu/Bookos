@@ -18,7 +18,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 order-2 order-lg-1">
-                        <form class="checkout-form">
+                        <form action="/order/process" method="POST" class="checkout-form">
+                            {{ csrf_field() }}
                             <div class="cf-title mb-4">Billing Address</div>
                             <div class="row address-inputs mb-3">
                                 <div class="col-md-12">

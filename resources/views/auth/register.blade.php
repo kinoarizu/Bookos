@@ -17,8 +17,20 @@
         <section>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5 mr-3 pt-4">
-                        <img src="{{asset('img/cart.svg')}}" class="mt-5" alt="">
+                    <div class="col-md-5 mr-3">
+                        <img src="{{asset('img/cart.svg')}}" class="mt-4" alt="">
+                        <div class="row mt-5">
+                            <div class="col-md-12 mx-auto d-block">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <a href="{{ url('/auth/facebook') }}" class="btn btn-lg btn-primary btn-block"><i class="fa fa-facebook pr-1"></i> Facebook</a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="" class="btn btn-lg btn-danger btn-block"><i class="fa fa-google pr-1"></i> Google</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-1">
                         
