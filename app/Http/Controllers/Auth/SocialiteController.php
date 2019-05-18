@@ -44,10 +44,11 @@ class SocialiteController extends Controller
             if (!$user) {
                 $user = User::create([
                     'full_name' => $socialUser->getName(),
-                    'email' => $socialUser->getEmail()
+                    'email' => $socialUser->getEmail(),
+                    'email_verified_at' => now(),
                 ]);
             }
-            $user->SocialAccounts()->create([
+            $user->socialaccount()->create([
                 'provider_id' => $socialUser->getId(),
                 'provider_name' => $provider
             ]);

@@ -26,7 +26,7 @@
                                         <a href="{{ url('/auth/facebook') }}" class="btn btn-lg btn-primary btn-block"><i class="fa fa-facebook pr-1"></i> Facebook</a>
                                     </div>
                                     <div class="col-md-6">
-                                        <a href="" class="btn btn-lg btn-danger btn-block"><i class="fa fa-google pr-1"></i> Google</a>
+                                        <a href="{{ url('/auth/google') }}" class="btn btn-lg btn-danger btn-block"><i class="fa fa-google pr-1"></i> Google</a>
                                     </div>
                                 </div>
                             </div>

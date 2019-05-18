@@ -18,7 +18,10 @@ class CartController extends Controller
             'id' => $product->id,
             'name' => $product->name_product,
             'price' => $product->price,
-            'quantity' => 1
+            'quantity' => 1,
+            'attributes' => [
+                'product_id' => $product->id
+            ]
         ]);
 
         return redirect('/cart');
