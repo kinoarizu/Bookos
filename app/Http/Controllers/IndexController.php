@@ -113,10 +113,13 @@ class IndexController extends Controller
             $order->orderedproduct()->saveMany([
                 new OrderedProduct([
                     'order_id' => $request->order_id,
-                    'product_id' => $item->id
+                    'product_id' => $item->attributes->product_id
                 ])
             ]);
+            Product::where('id', $item->attributes->product_id)->decrement('stock', 1);
         }
+
+        Cart::clear();
 
         return redirect('/profile');
     }

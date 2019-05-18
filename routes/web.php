@@ -59,3 +59,7 @@ Route::group(['middleware' => ['checkrole', 'revalidate', 'auth:admin']], functi
     Route::get('/admin/transactions', 'Admin\TransactionController@index');
     Route::get('/admin/transactions/{id}', 'Admin\TransactionController@detail');
 });
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

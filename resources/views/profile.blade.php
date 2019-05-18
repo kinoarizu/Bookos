@@ -37,9 +37,9 @@
                     </div>
                 </div>
                 <div class="row mb-5">
-                    <table class="table table-dark rounded mt-4">
+                    <table class="table rounded mt-4">
                         <thead>
-                            <th>Transaction ID</th>
+                            <th>Order ID</th>
                             <th>Products</th>
                             <th>Full Address</th>
                             <th>Shipment</th>
@@ -48,8 +48,10 @@
                             <th>Total Cost</th>
                             <th>Payment Proof</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </thead>
                         <tbody>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
