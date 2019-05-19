@@ -13,7 +13,7 @@
                         <div class="row mt-4">
                             <div class="col-md-4">
                                 <h4>Full Name</h4>
-                                <p>{{Auth::user()->full_name}}</p>
+                                <p>{{Auth::user()->name}}</p>
                             </div>
                             <div class="col-md-4">
                                 <h4>Email</h4>
