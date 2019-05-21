@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TypeBook extends Model
 {
+    protected $table = 'typebooks';
     protected $fillable = ['name'];
 
     public function product()

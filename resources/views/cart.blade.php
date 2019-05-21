@@ -86,7 +86,10 @@
                             <div class="product-item">
                                 <div class="pi-pic">
                                     <div class="tag-new">New</div>
-                                    <img src="{{asset('img/product/product.png')}}" alt="">
+                                    <a href="">
+                                        @php $pictures = json_decode($product->picture) @endphp
+                                        <img src="{{Voyager::image($pictures[0])}}" alt=""> 
+                                    </a>
                                     <div class="pi-links">
                                         <a href="/cart/add/{{$product->id}}" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                         <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>

@@ -48,7 +48,7 @@
                                 <div class="feature-icon">
                                     <img src="{{asset('img/icons/2.png')}}" alt="#">
                                 </div>
-                                <h2>Premium Products</h2>
+                                <h2>Premium Books</h2>
                             </div>
                         </div>
                         <div class="col-md-4 p-0 feature">
@@ -76,7 +76,8 @@
                             <div class="product-item">
                                 <div class="pi-pic">
                                     <a href="/product/{{$product->id}}">
-                                        <img src="{{asset('img/product/product.png')}}" alt="">
+                                        @php $pictures = json_decode($product->picture) @endphp
+                                        <img src="{{Voyager::image($pictures[0])}}" alt="">
                                     </a>
                                     <div class="pi-links">
                                         <a href="/cart/add/{{$product->id}}" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
@@ -101,7 +102,7 @@
                     <div class="section-title">
                         <h2>BROWSE TOP SELLING PRODUCTS</h2>
                     </div>
-                    <ul class="product-filter-menu mx-auto pl-3">
+                    <ul class="product-filter-menu mx-auto pl-5">
                         @foreach ($categories as $category)
                             <li><a href="/category/{{$category->name_category}}" class="text-uppercase">{{$category->name_category}}</a></li>
                         @endforeach
@@ -112,7 +113,8 @@
                                 <div class="product-item">
                                     <div class="pi-pic">
                                         <a href="/product/{{$product->id}}">
-                                            <img src="{{asset('img/product/product.png')}}" alt="">
+                                            @php $pictures = json_decode($product->picture) @endphp
+                                            <img src="{{Voyager::image($pictures[0])}}" alt="">
                                         </a>
                                         <div class="pi-links">
                                             <a href="/cart/add/{{$product->id}}" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>

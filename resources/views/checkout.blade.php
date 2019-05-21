@@ -47,27 +47,27 @@
                             <div class="cf-title mb-4">Payment</div>
                             <ul class="payment-list">
                                 <li>
-                                    <input type="radio" name="payment" value="Kartu Kredit" class="ml-4 mr-3">
-                                    Kartu Kredit
+                                    <input type="radio" name="payment" value="Bank Mandiri" class="ml-4 mr-3">
+                                    Bank Mandiri
                                     <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
                                 </li>
                                 <li>
-                                    <input type="radio" name="payment" value="ATM/Bank Transfer" class="ml-4 mr-3">
-                                    ATM/Bank Transfer
+                                    <input type="radio" name="payment" value="BRI" class="ml-4 mr-3">
+                                    BRI
                                     <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
                                 </li>
                                 <li>
-                                    <input type="radio" name="payment" value="TCash" class="ml-4 mr-3">
-                                    TCash
+                                    <input type="radio" name="payment" value="BNI" class="ml-4 mr-3">
+                                    BNI
                                     <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
                                 </li>
                                 <li>
-                                    <input type="radio" name="payment" value="Indomaret / Alfamaret" class="ml-4 mr-3">
-                                    Indomaret / Alfamaret
+                                    <input type="radio" name="payment" value="BCA" class="ml-4 mr-3">
+                                    BCA
                                     <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
                                 </li>
                             </ul>
-                            <div class="cf-title mb-4">Check Ship Cost</div>
+                            {{-- <div class="cf-title mb-4">Check Ship Cost</div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <select name="provinsi" id="provinsi">
@@ -83,7 +83,7 @@
                                     <small>Ship Cost</small>
                                     <h4>Rp. 20000</h4>
                                 </div>
-                            </div>
+                            </div> --}}
                             <button class="site-btn submit-order-btn mt-5">Place Order</button>
                         </form>
                     </div>

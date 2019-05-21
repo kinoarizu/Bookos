@@ -31,7 +31,8 @@ class IndexController extends Controller
         $userId = Auth::user()->id;
         $categories = Category::all();
         $quantity = Cart::session($userId)->getTotalQuantity();
-        return view('profile', compact('categories', 'quantity'));
+        $orders = Order::where('user_id', $userId)->get();
+        return view('profile', compact('categories', 'quantity', 'orders'));
     }
 
     public function category($name)

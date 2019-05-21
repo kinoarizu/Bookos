@@ -22,11 +22,12 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="product-pic-zoom">
-                            <img class="product-big-img" src="{{asset('img/product/product-large.png')}}" alt="">
+                            @php $pictures = json_decode($product->picture) @endphp
+                            <img class="product-big-img" src="{{Voyager::image($pictures[0])}}" alt="">
                         </div>
                         <div class="product-thumbs" tabindex="1" style="overflow: hidden; outline: none;">
                             <div class="product-thumbs-track">
-                                <div class="pt active" data-imgbigurl="{{asset('img/single-product/1.jpg')}}"><img src="{{asset('img/single-product/thumb-1.jpg')}}" alt=""></div>
+                                <div class="pt active" data-imgbigurl="{{Voyager::image($pictures[0])}}"><img src="{{Voyager::image($pictures[0])}}" alt=""></div>
                                 <div class="pt" data-imgbigurl="{{asset('img/single-product/2.jpg')}}"><img src="{{asset('img/single-product/thumb-2.jpg')}}" alt=""></div>
                                 <div class="pt" data-imgbigurl="{{asset('img/single-product/3.jpg')}}"><img src="{{asset('img/single-product/thumb-3.jpg')}}" alt=""></div>
                                 <div class="pt" data-imgbigurl="{{asset('img/single-product/4.jpg')}}"><img src="{{asset('img/single-product/thumb-4.jpg')}}" alt=""></div>
@@ -136,13 +137,16 @@
         <section class="related-product-section">
             <div class="container">
                 <div class="section-title">
-                    <h2>RELATED PRODUCTS</h2>
+                    <h2>RELATED BOOKS</h2>
                 </div>
                 <div class="product-slider owl-carousel">
                     @foreach ($products as $product)
                         <div class="product-item">
                             <div class="pi-pic">
-                                <img src="{{asset('img/product/1.jpg')}}" alt="">
+                                <a href="">
+                                    @php $pictures = json_decode($product->picture) @endphp
+                                    <img src="{{Voyager::image($pictures[0])}}" alt="">
+                                </a>
                                 <div class="pi-links">
                                     <a href="/cart/add/{{$product->id}}" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
                                     <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>

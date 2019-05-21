@@ -44,21 +44,24 @@
                             <th>Full Address</th>
                             <th>Shipment</th>
                             <th>Payment</th>
-                            <th>Ship Cost</th>
                             <th>Total Cost</th>
                             <th>Payment Proof</th>
                             <th>Status</th>
                             <th>Action</th>
                         </thead>
                         <tbody>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            @foreach ($orders as $order)
+                                <tr>
+                                    <td>{{$order->id}}</td>
+                                    <td><a href="">Your Product</a></td>
+                                    <td>{{$order->full_address}}</td>
+                                    <td>{{$order->shipment}}</td>
+                                    <td>{{$order->payment}}</td>
+                                    <td>{{$order->total_cost}}</td>
+                                    <td>{{$order->status}}</td>
+                                    <td><a href="">Upload Bukti</a></td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
