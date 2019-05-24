@@ -17,7 +17,7 @@
                             </div>
                             <div class="col-md-4">
                                 <h4>Email</h4>
-                                <p>muhammadazis801@gmail.com</p>
+                                <p>{{Auth::user()->email}}</p>
                             </div>
                             <div class="col-md-4">
                                 <h4>Phone</h4>
@@ -58,8 +58,23 @@
                                     <td>{{$order->shipment}}</td>
                                     <td>{{$order->payment}}</td>
                                     <td>{{$order->total_cost}}</td>
+                                    <td><img src="{{asset('uploads/'.$order->payment_proof)}}" width="80" height="80"></td>
                                     <td>{{$order->status}}</td>
-                                    <td><a href="">Upload Bukti</a></td>
+                                    <td>
+                                        <form action="/payment/{{$order->id}}" method="post" enctype="multipart/form-data">
+                                            {{csrf_field()}}
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroupFileAddon01">Gambar</span>
+                                                </div>
+                                                <div class="custom-file">
+                                                    <input type="file" name="gambar" id="gambar">
+                                                    <label class="custom-file-label" for="inputGroupFile01">Pilih File</label>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary btn-sm btn-block mt-1">Upload Bukti</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

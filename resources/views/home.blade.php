@@ -15,11 +15,11 @@
                                     <a href="/cart/add/{{$slider->id}}" class="site-btn sb-white">ADD TO CART</a>
                                 </div>
                             </div>
-                            <div class="offer-card text-white">
+                            {{-- <div class="offer-card text-white">
                                 <span>from</span>
                                 <h2>$29</h2>
                                 <p>SHOP NOW</p>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     @endforeach
@@ -69,12 +69,13 @@
             <section class="top-letest-product-section">
                 <div class="container">
                     <div class="section-title">
-                        <h2>LATEST PRODUCTS</h2>
+                        <h2>LATEST BOOKS</h2>
                     </div>
                     <div class="product-slider owl-carousel">
                         @foreach ($latest as $product)
                             <div class="product-item">
                                 <div class="pi-pic">
+                                    <div class="tag-new">New</div>
                                     <a href="/product/{{$product->id}}">
                                         @php $pictures = json_decode($product->picture) @endphp
                                         <img src="{{Voyager::image($pictures[0])}}" alt="">
@@ -108,7 +109,7 @@
                         @endforeach
                     </ul>
                     <div class="row">
-                        @foreach ($latest as $product)
+                        @foreach ($products as $product)
                             <div class="col-lg-3 col-sm-6">
                                 <div class="product-item">
                                     <div class="pi-pic">
@@ -129,8 +130,8 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="text-center pt-5">
-                        <button class="site-btn sb-line sb-dark">LOAD MORE</button>
+                    <div class="d-flex justify-content-center pt-5">
+                        {{ $products->links() }}
                     </div>
                 </div>
             </section>
@@ -138,7 +139,7 @@
 
 
             <!-- Banner section -->
-            <section class="banner-section">
+            {{-- <section class="banner-section">
                 <div class="container">
                     <div class="banner set-bg" data-setbg="{{asset('img/banner-bg.jpg')}}">
                         <div class="tag-new">NEW</div>
@@ -147,6 +148,6 @@
                         <a href="/product/{{$banner->id}}" class="site-btn">SHOP NOW</a>
                     </div>
                 </div>
-            </section>
+            </section> --}}
             <!-- Banner section end  -->
         @endsection

@@ -3,10 +3,11 @@
         <!-- Page info -->
         <div class="page-top-info">
                 <div class="container">
-                    <h4>CAtegory PAge</h4>
+                    <h4>{{ Request::segment(2) }} Category</h4>
                     <div class="site-pagination">
                         <a href="">Home</a> /
-                        <a href="">Shop</a> /
+                        <a href="">Category</a> /
+                        <a href="">{{ Request::segment(2) }}</a>
                     </div>
                 </div>
             </div>
@@ -26,7 +27,7 @@
                                     @endforeach
                                 </ul>
                             </div>
-                            <div class="filter-widget mb-0">
+                            {{-- <div class="filter-widget mb-0">
                                 <h2 class="fw-title">refine by</h2>
                                 <div class="price-range-wrap">
                                     <h4>Price</h4>
@@ -44,12 +45,12 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="filter-widget">
                                 <h2 class="fw-title">Brand</h2>
                                 <ul class="category-menu">
                                     @foreach ($brands as $brand)
-                                        <li><a href="#">{{$brand->name_brands}}<span>({{$brands->count()}})</span></a></li>
+                                        <li><a>{{$brand->name_brands}}<span>({{$brands->count()}})</span></a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -78,9 +79,9 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                <div class="text-center w-100 pt-3">
+                                {{-- <div class="text-center w-100 pt-3">
                                     <button class="site-btn sb-line sb-dark">LOAD MORE</button>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

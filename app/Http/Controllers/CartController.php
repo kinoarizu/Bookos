@@ -27,6 +27,23 @@ class CartController extends Controller
         return redirect('/cart');
     }
 
+    public function addToCheckout($id)
+    {
+        $product = Product::find($id);
+        $userId = Auth::user()->id;
+        Cart::session($userId)->add([
+            'id' => $product->id,
+            'name' => $product->name_product,
+            'price' => $product->price,
+            'quantity' => 1,
+            'attributes' => [
+                'product_id' => $product->id
+            ]
+        ]);
+
+        return redirect('/checkout');
+    }
+
     public function show()
     {
         $categories = Category::all();

@@ -22,10 +22,12 @@ Route::group(['middleware' => ['web', 'verified']], function () {
     Route::get('/product/{id}', 'IndexController@product');
     Route::get('/cart', 'CartController@show');
     Route::get('/cart/add/{id}', 'CartController@add');
+    Route::get('/cart/checkout/{id}', 'CartController@addToCheckout');
     Route::get('/cart/remove/{id}', 'CartController@remove');
     Route::get('/checkout', 'IndexController@checkout');
     Route::post('/order/process', 'IndexController@order');
     Route::get('/profile', 'IndexController@profile');
+    Route::post('/payment/{id}', 'UserController@payment');
     Route::get('/contact', function () {
         return view('contact');
     });

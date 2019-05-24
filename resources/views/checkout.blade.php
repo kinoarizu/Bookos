@@ -31,17 +31,14 @@
                                 <li>
                                     <input type="radio" name="shipment" value="JNE" class="ml-4 mr-3">
                                     JNE
-                                    <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
                                 </li>
                                 <li>
                                     <input type="radio" name="shipment" value="POS" class="ml-4 mr-3">
                                     POS
-                                    <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
                                 </li>
                                 <li>
                                     <input type="radio" name="shipment" value="TIKI" class="ml-4 mr-3">
                                     TIKI
-                                    <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
                                 </li>
                             </ul>
                             <div class="cf-title mb-4">Payment</div>
@@ -49,22 +46,18 @@
                                 <li>
                                     <input type="radio" name="payment" value="Bank Mandiri" class="ml-4 mr-3">
                                     Bank Mandiri
-                                    <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
                                 </li>
                                 <li>
                                     <input type="radio" name="payment" value="BRI" class="ml-4 mr-3">
                                     BRI
-                                    <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
                                 </li>
                                 <li>
                                     <input type="radio" name="payment" value="BNI" class="ml-4 mr-3">
                                     BNI
-                                    <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
                                 </li>
                                 <li>
                                     <input type="radio" name="payment" value="BCA" class="ml-4 mr-3">
                                     BCA
-                                    <img src="{{asset('img/mastercart.png')}}" alt="" class="ml-1">
                                 </li>
                             </ul>
                             {{-- <div class="cf-title mb-4">Check Ship Cost</div>

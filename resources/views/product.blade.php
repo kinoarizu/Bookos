@@ -3,10 +3,10 @@
         <!-- Page info -->
         <div class="page-top-info">
             <div class="container">
-                <h4>Product Page</h4>
+                <h4>Book Page</h4>
                 <div class="site-pagination">
                     <a href="">Home</a> /
-                    <a href="">Shop</a>
+                    <a href="">Book</a> /
                 </div>
             </div>
         </div>
@@ -17,7 +17,7 @@
         <section class="product-section">
             <div class="container">
                 <div class="back-link">
-                    <a href="./category.html"> &lt;&lt; Back to Category</a>
+                    <a href="/category/{{$product->category->name_category}}"> &lt;&lt; Back to Category</a>
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
@@ -35,10 +35,10 @@
                         </div>
                     </div>
                     <div class="col-lg-6 product-details">
-                        <h2 class="p-title">{{$product->name_product}}</h2>
+                        <h2 class="text-uppercase mb-2">{{$product->name_product}}</h2>
                         <h3 class="p-price">Rp.{{$product->price}}</h3>
                         <h4 class="p-stock">Available: <span>In Stock</span></h4>
-                        <div class="p-rating">
+                        {{-- <div class="p-rating">
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
@@ -48,7 +48,7 @@
                         <div class="p-review">
                             <a href="">3 reviews</a>|<a href="">Add your review</a>
                         </div>
-                        {{-- <div class="fw-size-choose">
+                        <div class="fw-size-choose">
                             <p>Size</p>
                             <div class="sc-item">
                                 <input type="radio" name="sc" id="xs-size">
@@ -74,13 +74,13 @@
                                 <input type="radio" name="sc" id="xxl-size">
                                 <label for="xxl-size">42</label>
                             </div>
-                        </div> --}}
+                        </div>
                         <div class="quantity">
                             <p>Quantity</p>
                             <div class="pro-qty"><input type="text" value="1"></div>
-                        </div>
-                        <a href="/checkout" class="site-btn">SHOP NOW</a>
-                        <a href="/cart/add/{{$product->id}}" class="site-btn bg-dark">ADD TO CART</a>
+                        </div> --}}
+                        <a href="/cart/checkout/{{$product->id}}" class="site-btn mt-5">CHECKOUT NOW</a>
+                        <a href="/cart/add/{{$product->id}}" class="site-btn bg-dark mt-5">ADD TO CART</a>
                         <div id="accordion" class="accordion-area">
                             <div class="panel">
                                 <div class="panel-header" id="headingOne">
@@ -88,14 +88,16 @@
                                 </div>
                                 <div id="collapse1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                     <div class="panel-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integer bibendum sodales arcu id te mpus. Ut consectetur lacus leo, non scelerisque nulla euismod nec.</p>
-                                        <p>Approx length 66cm/26" (Based on a UK size 8 sample)</p>
-                                        <p>Mixed fibres</p>
-                                        <p>The Model wears a UK size 8/ EU size 36/ US size 4 and her height is 5'8"</p>
+                                        <h4 class="text-dark">Tranfer Pembayaran Buku Bisa Melalui :<br></h4> 
+                                        <h5 class="font-weight-normal mb-3">BRI &nbsp;<b>023101029744505</b></h5>
+                                        <h5 class="font-weight-normal mb-3">Mandiri &nbsp;<b>1210005366830</b></h5>
+                                        <h5 class="font-weight-normal mb-3">BNI &nbsp;<b>0383015646</b></h5>  
+                                        <h5 class="font-weight-normal mb-4">BCA &nbsp;<b>8050300421</b></h5> 
+                                        <h4 class="font-weight-normal">Semua Atas Nama Ahmad <b>Al-Farizy</b></h4>
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel">
+                            {{-- <div class="panel">
                                 <div class="panel-header" id="headingTwo">
                                     <button class="panel-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">care details </button>
                                 </div>
@@ -117,7 +119,7 @@
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integer bibendum sodales arcu id te mpus. Ut consectetur lacus leo, non scelerisque nulla euismod nec.</p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="social-sharing">
                             <a href=""><i class="fa fa-google-plus"></i></a>

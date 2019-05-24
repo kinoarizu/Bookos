@@ -20,10 +20,10 @@ class IndexController extends Controller
         $categories = Category::all();
         $latest = Product::orderBy('created_at', 'desc')->limit(8)->get();
         $sliders = Product::where('category_id', 13)->get();
-        $banner = Product::latest('created_at')->first();
         $quantity = Cart::session($userId)->getTotalQuantity();
+        $products = Product::paginate(8);
 
-        return view('home', compact('categories', 'sliders', 'latest', 'banner', 'quantity'));
+        return view('home', compact('categories', 'sliders', 'latest', 'quantity', 'products'));
     }
 
     public function profile(Request $request)
