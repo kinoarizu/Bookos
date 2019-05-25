@@ -3,22 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Category;
 use App\Product;
+use App\Wishlist;
 use Cart;
 
-class WishListController extends Controller
+
+class WishlistController extends Controller
 {
     public function add($id)
     {
-        $product = Product::find($id);
-        $userId = Auth::user()->id;
-        Cart::session($userId)->add([
-            'id' => $product->id,
-            'name' => $product->name_product
-        ]);
-
-        return redirect('/cart');
+        $exist = Wishlist::where('product_id', '=', $id)->first();
+        if (!$exist) {
+            $wishlist = new Wishlist;
+            $wishlist->user_id = Auth::user()->id;
+            $wishlist->product_id = $id;
+            $wishlist->save();
+            return redirect('/wishlist');
+        } else {
+            return redirect('/wishlist');
+        }
     }
 
     public function show()
@@ -26,16 +31,15 @@ class WishListController extends Controller
         $categories = Category::all();
         $userId = Auth::user()->id;
         $latest = Product::orderBy('created_at', 'desc')->limit(4)->get();
-        $items = Cart::session($userId)->getContent();
+        $wishlists = Wishlist::where('user_id', Auth::user()->id)->get();
+        $quantity = Cart::session($userId)->getTotalQuantity();
 
-        return view('cart', compact('items', 'categories', 'latest'));
+        return view('wishlist', compact('categories', 'wishlists', 'quantity', 'latest'));
     }
 
-    public function remove($id)
+    public function destroy($id)
     {
-        $userId = Auth::user()->id;
-        Cart::session($userId)->remove($id);
-
-        return redirect('/cart');
+        Wishlist::find($id)->delete();
+        return redirect('/wishlist');
     }
 }

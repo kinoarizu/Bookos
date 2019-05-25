@@ -28,9 +28,9 @@ Route::group(['middleware' => ['web', 'verified']], function () {
     Route::post('/order/process', 'IndexController@order');
     Route::get('/profile', 'IndexController@profile');
     Route::post('/payment/{id}', 'UserController@payment');
-    Route::get('/contact', function () {
-        return view('contact');
-    });
+    Route::get('/wishlist', 'WishlistController@show');
+    Route::get('/wishlist/add/{id}', 'WishlistController@add');
+    Route::get('/wishlist/destroy/{id}', 'WishlistController@destroy');
 });
 
 Route::group(['prefix' => 'admin'], function () {
