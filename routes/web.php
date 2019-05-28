@@ -24,6 +24,7 @@ Route::group(['middleware' => ['web', 'verified']], function () {
     Route::get('/cart/add/{id}', 'CartController@add');
     Route::get('/cart/checkout/{id}', 'CartController@addToCheckout');
     Route::get('/cart/remove/{id}', 'CartController@remove');
+    Route::post('/discount/check', 'CartController@checkDiscount');
     Route::get('/checkout', 'IndexController@checkout');
     Route::post('/order/process', 'IndexController@order');
     Route::get('/profile', 'IndexController@profile');
