@@ -35,7 +35,8 @@
                                     @foreach ($items as $item)
                                         <tr>
                                             <td class="product-col">
-                                                <img src="{{asset('img/cart/1.jpg')}}" alt="">
+                                                @php $pictures = json_decode($item->attributes['picture']) @endphp
+                                                <img src="{{Voyager::image($pictures[0])}}" alt="">
                                                 <div class="pc-title">
                                                     <h4>{{$item->name}}</h4>
                                                     <p>{{$item->price}}</p>
@@ -57,7 +58,15 @@
                             </table>
                             </div>
                             <div class="total-cost">
-                                <h6>Total <span>Rp. {{$total}}</span></h6>
+                                @php
+                                    $discount = Cart::getCondition('discount');
+                                @endphp
+                                <h6>
+                                    @if($discount) 
+                                        <span class="mr-3">Discount {{$discount->getValue()}}</span> 
+                                    @endif 
+                                    Total <span>Rp. {{$total}}</span>
+                                </h6>
                             </div>
                         </div>
                     </div>

@@ -22,7 +22,8 @@ class CartController extends Controller
             'price' => $product->price,
             'quantity' => 1,
             'attributes' => [
-                'product_id' => $product->id
+                'product_id' => $product->id,
+                'picture' => $product->picture
             ]
         ]);
 
@@ -75,7 +76,7 @@ class CartController extends Controller
         $checkCode = Discount::where('promo_code', $request->code)->where('status', 'valid')->first();
         if ($checkCode) {
             $condition = new CartCondition([
-                'name' => 'Discount Price ' . $checkCode->discount,
+                'name' => 'discount',
                 'type' => 'discount',
                 'target' => 'total',
                 'value' => '-' . $checkCode->discount

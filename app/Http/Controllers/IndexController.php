@@ -120,6 +120,7 @@ class IndexController extends Controller
             Product::where('id', $item->attributes->product_id)->decrement('stock', 1);
         }
 
+        Cart::clearCartConditions();
         Cart::clear();
 
         return redirect('/profile');
