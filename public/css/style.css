@@ -140,6 +140,23 @@ ol {
     text-align: center;
 }
 
+.wish-btn {
+    width: 49.5%;
+    display: inline-block;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 167px;
+    padding: 18px 47px 14px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    background: #f51167;
+    color: #fff;
+    line-height: normal;
+    cursor: pointer;
+    text-align: center;
+}
+
 .site-btn:hover {
     color: #fff;
 }
@@ -343,6 +360,7 @@ ol {
 
 .site-logo {
     display: inline-block;
+    width: 185px;
 }
 
 .header-search-form {

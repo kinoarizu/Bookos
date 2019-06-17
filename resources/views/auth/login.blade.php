@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('layouts.auth') @section('title', 'Login')
     @section('content')
         <!--========= Section Form ==========-->
         <section>

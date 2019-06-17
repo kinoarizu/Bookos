@@ -79,8 +79,9 @@
                             <p>Quantity</p>
                             <div class="pro-qty"><input type="text" value="1"></div>
                         </div> --}}
-                        <a href="/cart/checkout/{{$product->id}}" class="site-btn mt-5">CHECKOUT NOW</a>
-                        <a href="/cart/add/{{$product->id}}" class="site-btn bg-dark mt-5">ADD TO CART</a>
+                        <a href="/cart/checkout/{{$product->id}}" class="site-btn btn-block mt-5">CHECKOUT NOW</a>
+                        <a href="/cart/add/{{$product->id}}" class="wish-btn bg-dark mt-3">ADD TO CART <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                        <a href="/wishlist/add/{{$product->id}}" class="wish-btn bg-dark mt-3">ADD TO WISHLIST <i class="fa fa-heart" aria-hidden="true"></i></a>
                         <div id="accordion" class="accordion-area">
                             <div class="panel">
                                 <div class="panel-header" id="headingOne">

@@ -21,7 +21,7 @@ class IndexController extends Controller
         $latest = Product::orderBy('created_at', 'desc')->limit(8)->get();
         $sliders = Product::where('category_id', 13)->get();
         $quantity = Cart::session($userId)->getTotalQuantity();
-        $products = Product::paginate(8);
+        $products = Product::paginate(12);
 
         return view('home', compact('categories', 'sliders', 'latest', 'quantity', 'products'));
     }
@@ -43,8 +43,10 @@ class IndexController extends Controller
         $products = Product::where('category_id', $category->id)->get();
         $brands = Brand::where('category_id', $category->id)->get();
         $quantity = Cart::session($userId)->getTotalQuantity();
+        $max = Product::max('price');
+        $min = Product::min('price');
 
-        return view('category', compact('categories', 'products', 'brands', 'quantity'));
+        return view('category', compact('categories', 'products', 'brands', 'quantity', 'max', 'min'));
     }
 
     public function product($id)
